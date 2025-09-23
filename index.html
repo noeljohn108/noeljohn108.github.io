@@ -36,9 +36,6 @@
         color: #ffcc00;
         text-shadow: 1px 1px #000;
     }
-    ul li {
-        margin: 5px 0;
-    }
     img {
         max-width: 100%;
         height: auto;
@@ -73,7 +70,14 @@
         border: 3px solid #ff00ff;
         box-shadow: 0 0 30px #ff00ff;
     }
-    /* Hidden Easter egg */
+    #lightbox span {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        color: #fff;
+        font-size: 2em;
+        cursor: pointer;
+    }
     #lebron {
         display: none;
         text-align: center;
@@ -103,7 +107,7 @@
 
 <section>
     <h2>Unit 1: Binary Numbers</h2>
-    <img src="https://cdn.pixabay.com/photo/2017/08/30/01/01/binary-2695560_960_720.png" alt="Binary Numbers" onclick="openLightbox(this)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Binary_example.svg/640px-Binary_example.svg.png" alt="Binary Numbers" onclick="openLightbox(this)">
 </section>
 
 <section>
@@ -123,13 +127,14 @@
 <section>
     <h2>Cloud Computing</h2>
     <p>Cloud computing allows data and applications to be stored and accessed over the Internet instead of a local computer. It enables engineers to collaborate remotely, scale resources easily, and access powerful tools without needing expensive hardware. Popular services like Google Drive, AWS, and Microsoft Azure make cloud computing accessible for personal and professional projects.</p>
-    <img src="https://cdn.pixabay.com/photo/2016/12/02/10/39/cloud-computing-1877232_960_720.png" alt="Cloud Computing" onclick="openLightbox(this)">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Cloud_computing_icon.svg/512px-Cloud_computing_icon.svg.png" alt="Cloud Computing" onclick="openLightbox(this)">
 </section>
 
 <div id="lebron">🏀 Surprise! LeBron James is watching! 🏀</div>
 
 <!-- Lightbox -->
-<div id="lightbox" onclick="closeLightbox()">
+<div id="lightbox">
+    <span onclick="closeLightbox()">&times;</span>
     <img id="lightbox-img" src="" alt="Zoomed">
 </div>
 
@@ -148,10 +153,8 @@
 
     // Lightbox
     function openLightbox(img) {
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
+        document.getElementById('lightbox-img').src = img.src;
+        document.getElementById('lightbox').style.display = 'flex';
     }
     function closeLightbox() {
         document.getElementById('lightbox').style.display = 'none';
