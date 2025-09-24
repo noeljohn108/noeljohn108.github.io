@@ -52,3 +52,72 @@
       text-align: center;
       font-size: 1.5em;
       color: #ffcc00;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header id="header">
+  Noel John
+</header>
+
+<section>
+  <h2>My Goals After High School</h2>
+  <p>After high school, I want to study engineering. I’m interested in learning how computers and digital systems work, including concepts like:</p>
+  <ul>
+    <li><strong>Bit:</strong> A binary digit, either 0 or 1.</li>
+    <li><strong>Byte:</strong> A sequence of 8 bits.</li>
+    <li><strong>Roundoff:</strong> Error that occurs when numbers can’t be represented precisely with limited bits.</li>
+    <li><strong>Analog data:</strong> Values that change smoothly over time, like pitch and volume in music.</li>
+    <li><strong>Lossless:</strong> Data compression that allows full recovery of the original.</li>
+    <li><strong>Lossy:</strong> Data compression that discards some data, so it can’t be fully recovered.</li>
+    <li><strong>Metadata:</strong> Data about data, like info about a file or database row.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Unit 1 Topic: Bits & Bytes</h2>
+  <img src="unit1.png" alt="Bits & Bytes Illustration">
+</section>
+
+<section>
+  <h2>Unit 2 Topic: Data Compression</h2>
+  <img src="unit2.png" alt="Data Compression Illustration">
+</section>
+
+<section>
+  <h2>How the Internet Works</h2>
+  <iframe src="https://www.youtube.com/embed/Dxcc6ycZ73M"
+          title="How the Internet Works"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+  </iframe>
+</section>
+
+<section>
+  <h2>Cloud Computing</h2>
+  <p>Cloud computing allows data and applications to be stored and accessed over the Internet instead of a local computer. It enables engineers to collaborate remotely, scale resources easily, and access powerful tools without needing expensive hardware. Popular services like Google Drive, AWS, and Microsoft Azure make cloud computing accessible for personal and professional projects.</p>
+  <img src="cloud-computing.jpeg" alt="Cloud Computing Illustration">
+</section>
+
+<div id="lebron">
+  🏀 Surprise! LeBron James is watching! 🏀
+</div>
+
+<script>
+  let clickCount = 0;
+  const header = document.getElementById('header');
+  const lebron = document.getElementById('lebron');
+
+  header.addEventListener('click', () => {
+    clickCount++;
+    if (clickCount === 5) {
+      lebron.style.display = 'block';
+      alert("Easter Egg Unlocked: LeBron James!");
+    }
+  });
+</script>
+
+</body>
+</html>
