@@ -1,129 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Noel John's Retro Page</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noel John's Retro Page</title>
+  <style>
     body {
-        font-family: 'Courier New', monospace;
-        background-color: #1a1a1a;
-        color: #00ffcc;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
+      font-family: 'Courier New', monospace;
+      background-color: #1a1a1a;
+      color: #00ffcc;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
     }
     header {
-        background-color: #ff00ff;
-        color: #fff;
-        text-align: center;
-        padding: 25px;
-        font-size: 2em;
-        letter-spacing: 2px;
-        text-shadow: 2px 2px #000;
-        cursor: pointer;
+      background-color: #ff00ff;
+      color: #fff;
+      text-align: center;
+      padding: 25px;
+      font-size: 2em;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px #000;
+      cursor: pointer;
     }
     section {
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #000;
-        border: 3px solid #00ffcc;
-        border-radius: 10px;
-        box-shadow: 0 0 20px #ff00ff;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #000;
+      border: 3px solid #00ffcc;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #ff00ff;
     }
     h2 {
-        color: #ffcc00;
-        text-shadow: 1px 1px #000;
-    }
-    ul li {
-        margin: 5px 0;
+      color: #ffcc00;
+      text-shadow: 1px 1px #000;
     }
     img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 10px 0;
-        border: 2px solid #ff00ff;
-        cursor: pointer;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 10px 0;
+      border: 2px solid #ff00ff;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    img:hover {
+      transform: scale(1.05);
     }
     iframe {
-        width: 100%;
-        height: 400px;
-        border: 2px solid #ff00ff;
+      width: 100%;
+      height: 400px;
+      border: 2px solid #ff00ff;
     }
     #lebron {
-        display: none;
-        text-align: center;
-        font-size: 1.5em;
-        color: #ffcc00;
-        margin-top: 20px;
+      display: none;
+      text-align: center;
+      font-size: 1.5em;
+      color: #ffcc00;
+      margin-top: 20px;
     }
-</style>
+    /* Lightbox / popup */
+    #lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 3px solid #ff00ff;
+      box-shadow: 0 0 30px #ff00ff;
+    }
+  </style>
 </head>
 <body>
 
 <header id="header">
-    Noel John
+  Noel John
 </header>
 
 <section>
-    <h2>My Goals After High School</h2>
-    <p>After high school, I want to study engineering. I’m interested in learning how computers and digital systems work, including concepts like:</p>
-    <ul>
-        <li><strong>Bit:</strong> A binary digit, either 0 or 1.</li>
-        <li><strong>Byte:</strong> A sequence of 8 bits.</li>
-        <li><strong>Roundoff:</strong> Error that occurs when numbers can’t be represented precisely with limited bits.</li>
-        <li><strong>Analog data:</strong> Values that change smoothly over time, like pitch and volume in music.</li>
-        <li><strong>Lossless:</strong> Data compression that allows full recovery of the original.</li>
-        <li><strong>Lossy:</strong> Data compression that discards some data, so it can’t be fully recovered.</li>
-        <li><strong>Metadata:</strong> Data about data, like info about a file or database row.</li>
-    </ul>
+  <h2>My Goals After High School</h2>
+  <p>After high school, I want to study engineering. I’m interested in learning how computers and digital systems work, including concepts like:</p>
+  <ul>
+    <li><strong>Bit:</strong> A binary digit, either 0 or 1.</li>
+    <li><strong>Byte:</strong> A sequence of 8 bits.</li>
+    <li><strong>Roundoff:</strong> Error that occurs when numbers can’t be represented precisely with limited bits.</li>
+    <li><strong>Analog data:</strong> Values that change smoothly over time, like pitch and volume in music.</li>
+    <li><strong>Lossless:</strong> Data compression that allows full recovery of the original.</li>
+    <li><strong>Lossy:</strong> Data compression that discards some data, so it can’t be fully recovered.</li>
+    <li><strong>Metadata:</strong> Data about data, like info about a file or database row.</li>
+  </ul>
 </section>
 
 <section>
-    <h2>Unit 1 Topic: Bits & Bytes</h2>
-    <img src="https://cdn.pixabay.com/photo/2016/11/29/04/17/binary-1866944_1280.jpg"
-         alt="Bits and Bytes Illustration">
+  <h2>Unit 1 Topic: Bits & Bytes</h2>
+  <img src="https://cdn.pixabay.com/photo/2015/04/23/00/41/binary-736885_1280.png"
+       alt="Bits & Bytes Illustration"
+       onclick="openLightbox(this)">
 </section>
 
 <section>
-    <h2>Unit 2 Topic: Data Compression</h2>
-    <img src="download.jpeg" alt="Data Compression Illustration">
+  <h2>Unit 2 Topic: Data Compression</h2>
+  <img src="download.jpeg"
+       alt="Data Compression Illustration"
+       onclick="openLightbox(this)">
 </section>
 
 <section>
-    <h2>How the Internet Works</h2>
-    <iframe src="https://www.youtube.com/embed/Dxcc6ycZ73M" 
-            title="How the Internet Works" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-    </iframe>
+  <h2>How the Internet Works</h2>
+  <iframe src="https://www.youtube.com/embed/Dxcc6ycZ73M"
+          title="How the Internet Works"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+  </iframe>
 </section>
 
 <section>
-    <h2>Cloud Computing</h2>
-    <p>Cloud computing allows data and applications to be stored and accessed over the Internet instead of a local computer. It enables engineers to collaborate remotely, scale resources easily, and access powerful tools without needing expensive hardware. Popular services like Google Drive, AWS, and Microsoft Azure make cloud computing accessible for personal and professional projects.</p>
-    <img src="https://cdn.pixabay.com/photo/2017/06/10/07/18/cloud-2389230_1280.png"
-         alt="Cloud Computing Illustration">
+  <h2>Cloud Computing</h2>
+  <p>Cloud computing allows data and applications to be stored and accessed over the Internet instead of a local computer. It enables engineers to collaborate remotely, scale resources easily, and access powerful tools without needing expensive hardware. Popular services like Google Drive, AWS, and Microsoft Azure make cloud computing accessible for personal and professional projects.</p>
+  <img src="https://cdn.pixabay.com/photo/2019/07/14/07/57/cloud-4332482_1280.png"
+       alt="Cloud Computing Illustration"
+       onclick="openLightbox(this)">
 </section>
 
 <div id="lebron">
-    🏀 Surprise! LeBron James is watching! 🏀
+  🏀 Surprise! LeBron James is watching! 🏀
+</div>
+
+<!-- Lightbox / popup container -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Zoomed Image">
 </div>
 
 <script>
-    let clickCount = 0;
-    const header = document.getElementById('header');
-    const lebron = document.getElementById('lebron');
+  let clickCount = 0;
+  const header = document.getElementById('header');
+  const lebron = document.getElementById('lebron');
 
-    header.addEventListener('click', () => {
-        clickCount++;
-        if(clickCount === 5){
-            lebron.style.display = 'block';
-            alert("Easter Egg Unlocked: LeBron James!");
-        }
-    });
+  header.addEventListener('click', () => {
+    clickCount++;
+    if (clickCount === 5) {
+      lebron.style.display = 'block';
+      alert("Easter Egg Unlocked: LeBron James!");
+    }
+  });
+
+  function openLightbox(img) {
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    lb.style.display = 'flex';
+    lbImg.src = img.src;
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
 </script>
 
 </body>
