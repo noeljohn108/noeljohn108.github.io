@@ -91,8 +91,8 @@
 </head>
 <body>
 
-<header id="header">  
-    Noel John  
+<header id="header">
+    Noel John
 </header>
 
 <section>
@@ -110,17 +110,13 @@
 </section>
 
 <section>
-    <h2>Unit 1 Topic: Bits & Bytes</h2>
-    <img src="https://cdn.pixabay.com/photo/2018/05/27/20/37/data-3432628_960_720.jpg"
-         alt="Bits and Bytes Illustration"
-         onclick="openLightbox(this)">
+    <h2>Unit 1 Topic Illustration</h2>
+    <img src="https://cdn.pixabay.com/photo/2017/08/30/01/01/binary-2695560_960_720.png" alt="Binary Numbers Illustration" onclick="openLightbox(this)">
 </section>
 
 <section>
     <h2>Unit 2 Topic Illustration</h2>
-    <img src="https://cdn.pixabay.com/photo/2016/11/29/04/28/technology-1867396_960_720.jpg"
-         alt="Data Compression Illustration"
-         onclick="openLightbox(this)">
+    <img src="https://cdn.pixabay.com/photo/2016/11/29/04/28/technology-1867396_960_720.jpg" alt="Data Compression Illustration" onclick="openLightbox(this)">
 </section>
 
 <section>
@@ -132,41 +128,45 @@
     </iframe>
 </section>
 
+<!-- Cloud Computing Section -->
 <section>
     <h2>Cloud Computing</h2>
     <p>Cloud computing allows data and applications to be stored and accessed over the Internet instead of a local computer. It enables engineers to collaborate remotely, scale resources easily, and access powerful tools without needing expensive hardware. Popular services like Google Drive, AWS, and Microsoft Azure make cloud computing accessible for personal and professional projects.</p>
-    <img src="https://cdn.pixabay.com/photo/2017/08/30/01/01/cloud-2695560_960_720.png"
-         alt="Cloud Computing Illustration"
-         onclick="openLightbox(this)">
+    <img src="https://cdn.pixabay.com/photo/2017/08/30/01/01/cloud-2695560_960_720.png" alt="Cloud Computing Illustration" onclick="openLightbox(this)">
 </section>
 
-<div id="lebron">  
-    🏀 Surprise! LeBron James is watching! 🏀  
+<!-- Hidden Easter Egg -->
+<div id="lebron">
+    🏀 Surprise! LeBron James is watching! 🏀
 </div>
 
-<div id="lightbox" onclick="closeLightbox()">  
-    <img id="lightbox-img" src="" alt="Zoomed Image">  
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Zoomed Image">
 </div>
 
 <script>
+    // Easter egg: Click the header 5 times to reveal LeBron
     let clickCount = 0;
     const header = document.getElementById('header');
     const lebron = document.getElementById('lebron');
 
     header.addEventListener('click', () => {
         clickCount++;
-        if (clickCount === 5) {
+        if(clickCount === 5){
             lebron.style.display = 'block';
             alert("Easter Egg Unlocked: LeBron James!");
         }
     });
 
+    // Lightbox functions
     function openLightbox(img) {
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         lightbox.style.display = 'flex';
         lightboxImg.src = img.src;
     }
+
     function closeLightbox() {
         document.getElementById('lightbox').style.display = 'none';
     }
