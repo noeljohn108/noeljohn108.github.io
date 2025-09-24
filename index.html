@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Noel John's Retro Page</title>
 <style>
+    /* Retro vibes */
     body {
         font-family: 'Courier New', monospace;
         background-color: #1a1a1a;
@@ -21,7 +22,7 @@
         font-size: 2em;
         letter-spacing: 2px;
         text-shadow: 2px 2px #000;
-        cursor: pointer;
+        cursor: pointer; /* Easter egg trigger */
     }
     section {
         max-width: 800px;
@@ -36,48 +37,22 @@
         color: #ffcc00;
         text-shadow: 1px 1px #000;
     }
+    ul li {
+        margin: 5px 0;
+    }
     img {
         max-width: 100%;
         height: auto;
         display: block;
         margin: 10px 0;
         border: 2px solid #ff00ff;
-        cursor: pointer;
-        transition: transform 0.2s;
     }
-    img:hover {
-        transform: scale(1.05);
-    }
-    iframe {
+    video {
         width: 100%;
-        height: 400px;
+        margin-top: 10px;
         border: 2px solid #ff00ff;
     }
-    /* Lightbox */
-    #lightbox {
-        display: none;
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: rgba(0,0,0,0.9);
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-    }
-    #lightbox img {
-        max-width: 90%;
-        max-height: 90%;
-        border: 3px solid #ff00ff;
-        box-shadow: 0 0 30px #ff00ff;
-    }
-    #lightbox span {
-        position: absolute;
-        top: 20px;
-        right: 40px;
-        color: #fff;
-        font-size: 2em;
-        cursor: pointer;
-    }
+    /* Hidden Easter egg */
     #lebron {
         display: none;
         text-align: center;
@@ -89,7 +64,9 @@
 </head>
 <body>
 
-<header id="header">Noel John</header>
+<header id="header">
+    Noel John
+</header>
 
 <section>
     <h2>My Goals After High School</h2>
@@ -106,43 +83,41 @@
 </section>
 
 <section>
-    <h2>Unit 1: Binary Numbers</h2>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Binary_example.svg/640px-Binary_example.svg.png" alt="Binary Numbers" onclick="openLightbox(this)">
+    <h2>Unit 1 Topic Illustration</h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721292.png" alt="Binary Numbers Illustration">
 </section>
 
 <section>
-    <h2>Unit 2: Data Compression</h2>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Data_compression_in_text.svg/640px-Data_compression_in_text.svg.png" alt="Data Compression" onclick="openLightbox(this)">
+    <h2>Unit 2 Topic Illustration</h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/4072/4072305.png" alt="Data Compression Illustration">
 </section>
 
 <section>
     <h2>How the Internet Works</h2>
-    <iframe src="https://www.youtube.com/embed/Dxcc6ycZ73M" 
-            title="How the Internet Works" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-    </iframe>
+    <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 </section>
 
+<!-- Cloud Computing Section -->
 <section>
     <h2>Cloud Computing</h2>
     <p>Cloud computing allows data and applications to be stored and accessed over the Internet instead of a local computer. It enables engineers to collaborate remotely, scale resources easily, and access powerful tools without needing expensive hardware. Popular services like Google Drive, AWS, and Microsoft Azure make cloud computing accessible for personal and professional projects.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Cloud_computing_icon.svg/512px-Cloud_computing_icon.svg.png" alt="Cloud Computing" onclick="openLightbox(this)">
+    <img src="https://cdn-icons-png.flaticon.com/512/4144/4144796.png" alt="Cloud Computing Illustration">
 </section>
 
-<div id="lebron">🏀 Surprise! LeBron James is watching! 🏀</div>
-
-<!-- Lightbox -->
-<div id="lightbox">
-    <span onclick="closeLightbox()">&times;</span>
-    <img id="lightbox-img" src="" alt="Zoomed">
+<!-- Hidden Easter Egg -->
+<div id="lebron">
+    🏀 Surprise! LeBron James is watching! 🏀
 </div>
 
 <script>
-    // Easter egg
+    // Easter egg: Click the header 5 times to reveal LeBron
     let clickCount = 0;
     const header = document.getElementById('header');
     const lebron = document.getElementById('lebron');
+
     header.addEventListener('click', () => {
         clickCount++;
         if(clickCount === 5){
@@ -150,15 +125,6 @@
             alert("Easter Egg Unlocked: LeBron James!");
         }
     });
-
-    // Lightbox
-    function openLightbox(img) {
-        document.getElementById('lightbox-img').src = img.src;
-        document.getElementById('lightbox').style.display = 'flex';
-    }
-    function closeLightbox() {
-        document.getElementById('lightbox').style.display = 'none';
-    }
 </script>
 
 </body>
