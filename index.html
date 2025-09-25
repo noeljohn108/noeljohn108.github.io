@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Noel John's Retro Page</title>
 <style>
+    /* Retro vibes */
     body {
         font-family: 'Courier New', monospace;
         background-color: #1a1a1a;
@@ -21,7 +22,7 @@
         font-size: 2em;
         letter-spacing: 2px;
         text-shadow: 2px 2px #000;
-        cursor: pointer;
+        cursor: pointer; /* Easter egg trigger */
     }
     section {
         max-width: 800px;
@@ -46,12 +47,39 @@
         margin: 10px 0;
         border: 2px solid #ff00ff;
         cursor: pointer;
+        transition: transform 0.2s;
+    }
+    img:hover {
+        transform: scale(1.05);
     }
     iframe {
         width: 100%;
         height: 400px;
         border: 2px solid #ff00ff;
     }
+    /* Lightbox (popup) */
+    #lightbox {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+    }
+    #lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border: 3px solid #ff00ff;
+        box-shadow: 0 0 30px #ff00ff;
+    }
+    #lightbox:target {
+        display: flex;
+    }
+    /* Hidden Easter egg */
     #lebron {
         display: none;
         text-align: center;
@@ -82,14 +110,13 @@
 </section>
 
 <section>
-    <h2>Unit 1 Topic: Bits & Bytes</h2>
-    <img src="https://cdn.pixabay.com/photo/2016/11/29/04/17/binary-1866944_1280.jpg"
-         alt="Bits and Bytes Illustration">
+    <h2>Unit 1 Topic Illustration</h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/552/552220.png" alt="Binary Numbers Illustration" onclick="openLightbox(this)">
 </section>
 
 <section>
-    <h2>Unit 2 Topic: Data Compression</h2>
-    <img src="download.jpeg" alt="Data Compression Illustration">
+    <h2>Unit 2 Topic Illustration</h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/3616/3616770.png" alt="Data Compression Illustration" onclick="openLightbox(this)">
 </section>
 
 <section>
@@ -101,18 +128,25 @@
     </iframe>
 </section>
 
+<!-- Cloud Computing Section -->
 <section>
     <h2>Cloud Computing</h2>
     <p>Cloud computing allows data and applications to be stored and accessed over the Internet instead of a local computer. It enables engineers to collaborate remotely, scale resources easily, and access powerful tools without needing expensive hardware. Popular services like Google Drive, AWS, and Microsoft Azure make cloud computing accessible for personal and professional projects.</p>
-    <img src="https://cdn.pixabay.com/photo/2017/06/10/07/18/cloud-2389230_1280.png"
-         alt="Cloud Computing Illustration">
+    <img src="https://cdn-icons-png.flaticon.com/512/4144/4144784.png" alt="Cloud Computing Illustration" onclick="openLightbox(this)">
 </section>
 
+<!-- Hidden Easter Egg -->
 <div id="lebron">
     🏀 Surprise! LeBron James is watching! 🏀
 </div>
 
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Zoomed Image">
+</div>
+
 <script>
+    // Easter egg: Click the header 5 times to reveal LeBron
     let clickCount = 0;
     const header = document.getElementById('header');
     const lebron = document.getElementById('lebron');
@@ -124,6 +158,18 @@
             alert("Easter Egg Unlocked: LeBron James!");
         }
     });
+
+    // Lightbox functions
+    function openLightbox(img) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+    }
 </script>
 
 </body>
