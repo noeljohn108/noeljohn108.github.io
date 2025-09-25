@@ -21,7 +21,6 @@
       font-size: 2em;
       letter-spacing: 2px;
       text-shadow: 2px 2px #000;
-      cursor: pointer;
     }
     main {
       max-width: 900px;
@@ -57,21 +56,11 @@
       border-radius: 8px;
       box-shadow: 0 0 12px rgba(255,0,255,0.4);
     }
-    iframe {
-      width: 100%;
-      height: 400px;
-      border: 2px solid #ff00ff;
-    }
-    #lebron {
-      display: none;
-      margin-top: 14px;
-      color: #ffcc00;
-    }
   </style>
 </head>
 <body>
 
-<header id="header">Noel John</header>
+<header>Noel John</header>
 
 <main>
   <section class="card">
@@ -98,7 +87,7 @@
 
   <section class="card">
     <h2>Unit 2: Data Compression</h2>
-    <p>Compression reduces file size so data is easier to store and transfer. There are two main types: <em>lossless</em>, which keeps all the original data, and <em>lossy</em>, which discards some data to shrink files even more.</p>
+    <p>Compression reduces file size so data is easier to store and transfer. There are two main types: <em>lossless</em> and <em>lossy</em>.</p>
     <img class="retro-img"
          src="https://cdn.pixabay.com/photo/2017/01/31/13/14/icon-2027661_1280.png"
          alt="Data Compression - Zip file icon">
@@ -116,30 +105,7 @@
          src="https://cdn.pixabay.com/photo/2019/07/14/07/57/cloud-4332482_1280.png"
          alt="Cloud Computing Illustration">
   </section>
-
-  <section class="card">
-    <h2>How the Internet Works</h2>
-    <iframe src="https://www.youtube.com/embed/Dxcc6ycZ73M"
-            title="How the Internet Works"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-  </section>
-
-  <div id="lebron">🏀 Surprise! LeBron James is watching! 🏀</div>
 </main>
-
-<script>
-  let clickCount = 0;
-  const header = document.getElementById('header');
-  const lebron = document.getElementById('lebron');
-  header.addEventListener('click', () => {
-    clickCount++;
-    if (clickCount === 5) {
-      lebron.style.display = 'block';
-      alert("Easter Egg Unlocked: LeBron James!");
-    }
-  });
-</script>
 
 </body>
 </html>
